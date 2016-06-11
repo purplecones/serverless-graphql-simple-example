@@ -1,0 +1,7 @@
+{
+  "name": "serverless-graphql-test",
+  "custom": {},
+  "plugins": [
+    "serverless-optimizer-plugin"
+  ]
+}
