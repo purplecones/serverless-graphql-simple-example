@@ -1,17 +1,55 @@
 {
   "name": "serverless-graphql-simple-example",
   "version": "0.0.1",
-  "description": "A Serverless Project and its Serverless Plugin dependencies.",
-  "author": "me",
+  "description": "A simple example of using Serverless to deploy a GraphQL server and GraphiQL on AWS Lambda, API Gateway, and S3.",
+  "author": "purplecones",
   "license": "MIT",
   "private": false,
   "repository": {
     "type": "git",
-    "url": "git://github.com/"
+    "url": "git://github.com/purplecones/serverless-graphql-simple-example"
   },
   "dependencies": {
+    "babel-cli": "^6.9.0",
+    "babel-core": "^6.9.0",
+    "babel-eslint": "^6.0.4",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-transform-runtime": "^6.9.0",
+    "babel-polyfill": "^6.9.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-1": "^6.5.0",
+    "babel-register": "^6.9.0",
+    "babel-runtime": "^6.9.0",
     "babelify": "^7.2.0",
-    "babel-preset-es2015": "^6.3.13",
-    "serverless-optimizer-plugin": "^2.5.1"
+    "cpy": "^4.0.1",
+    "del": "^2.2.0",
+    "extend": "^3.0.0",
+    "fd": "0.0.2",
+    "fs": "0.0.2",
+    "graphiql": "^0.7.2",
+    "graphql": "^0.4.14",
+    "isomorphic-fetch": "^2.2.1",
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0",
+    "serverless-client-s3": "^2.0.0",
+    "serverless-cors-plugin": "^0.4.1",
+    "serverless-optimizer-plugin": "^2.5.1",
+  },
+  "scripts": {
+    "clean": "node tools/clean",
+    "build": "node tools/build --release",
+    "build:debug": "node tools/build",
+    "deploy": "npm run build && sls client deploy",
+  },
+  "babel": {
+    "presets": [
+      "react",
+      "es2015",
+      "stage-1"
+    ],
+    "plugins": [
+      "transform-runtime"
+    ]
   }
 }

@@ -1,7 +1,13 @@
 {
   "name": "serverless-graphql-test",
-  "custom": {},
+  "custom": {
+    "client": {
+      "bucketName": "change.me.${stage}.${region}"
+    }
+  },
   "plugins": [
-    "serverless-optimizer-plugin"
+    "serverless-optimizer-plugin",
+    "serverless-client-s3",
+    "serverless-cors-plugin"
   ]
 }
